@@ -1,0 +1,36 @@
+MVCモデル
+    WEBフレームワークで一般的に取り入れられている、アプリケーション設定を整理するための概念
+    
+    Model
+        データベースとデータ処理を行う場所
+    View
+        画面を映し出す場所
+    Controller
+        全体の制御する場所
+
+
+Laravelでの場所
+    Model
+        app/（User.php）
+    Controller
+        app/Http/Controllers/（Controller.php）
+    View
+        views/（welcome.blade.php）
+
+    appフォルダ
+        モデル・コントローラ
+    databaseフォルダ
+        マイグレーションファイル
+    publicフォルダ
+        css、javascriptのフォルダやファイル
+    routesフォルダ
+        ルーティングを行う
+    storageフォルダ
+        ログファイル
+    vender
+        Composerでインストールしたパッケージが保存される
+    .env
+        接続ファイル
+
+データ接続について
+    
