@@ -22,5 +22,14 @@ Route::get('/index', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// get送信
+// get送信で /tweets というURLリクエストが来た時、TweetController の indexメソッド(関数)を起動せよ
+Route::get('/tweets', '\App\Http\Controllers\TweetController@index');
+Route::get('/tweets/create', '\App\Http\Controllers\TweetController@create');
+Route::post('/tweets', '\App\Http\Controllers\TweetController@store');
+
+Route::get('/comments', '\App\Http\Controllers\CommentController@index');
+Route::get('/comments/create', '\App\Http\Controllers\CommentController@create');
+Route::post('/comments', '\App\Http\Controllers\CommentController@store');

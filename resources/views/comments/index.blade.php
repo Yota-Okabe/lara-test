@@ -7,6 +7,10 @@
     <title>初めてのLaravel</title>
 </head>
 <body>
-    <h1>初めてのLaravelです。</h1>
+    @foreach($comments as $comment)
+        <p>{{ $comment->id }}</p>
+        <p>{{ $comment->text }}</p>
+        <hr>
+    @endforeach
 </body>
 </html>
