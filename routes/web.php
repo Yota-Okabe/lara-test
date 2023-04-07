@@ -29,6 +29,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/tweets', '\App\Http\Controllers\TweetController@index');
 Route::get('/tweets/create', '\App\Http\Controllers\TweetController@create');
 Route::post('/tweets', '\App\Http\Controllers\TweetController@store');
+Route::get('/tweets/{id}', '\App\Http\Controllers\TweetController@show');
+Route::delete('/tweets/{id}', '\App\Http\Controllers\TweetController@destroy');
+Route::get('/tweets/{id}/edit', '\App\Http\Controllers\TweetController@edit');
+Route::put('/tweets/{id}', '\App\Http\Controllers\TweetController@update');
 
 Route::get('/comments', '\App\Http\Controllers\CommentController@index');
 Route::get('/comments/create', '\App\Http\Controllers\CommentController@create');

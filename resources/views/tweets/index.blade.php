@@ -10,6 +10,22 @@
     @foreach($tweets as $tweet)
         <p>{{ $tweet->id }}</p>
         <p>{{ $tweet->name }}</p>
+        <form action="/tweets/{{ $tweet->id }}" method="get">
+            {{-- <input type="hidden" value="{{ $tweet->id }}" name="id"> --}}
+            <input type="submit" value="詳細">
+        </form>
+        
+        <form action="/tweets/{{ $tweet->id }}" method="post">
+            {{-- <input type="hidden" value="{{ $tweet->id }}" name="id"> --}}
+            @csrf
+            @method('delete')
+            <input type="submit" value="削除">
+        </form>
+
+        <form action="/tweets/{{ $tweet->id }}/edit" method="get">
+            {{-- <input type="hidden" value="{{ $tweet->id }}" name="id"> --}}
+            <input type="submit" value="編集">
+        </form>
         <hr>
     @endforeach
 </body>
